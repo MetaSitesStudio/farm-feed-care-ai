@@ -3,6 +3,7 @@ import React, { useState } from 'react';
 import type { FeedIngredient, IndustrialFeedWithWeight, Nutrient, NutritionalTarget } from '../types';
 import { getFeedSuggestion } from '../services/geminiService';
 import { IngredientSlider } from './IngredientSlider';
+import { MultiSelectDropdown } from './MultiSelectDropdown';
 import { PHILIPPINE_FEEDS } from '../constants';
 import { useTranslation } from '../hooks/useTranslation';
 
@@ -44,15 +45,13 @@ export const MixWeights: React.FC<MixWeightsProps> = ({
     const { t } = useTranslation();
     const [isLoading, setIsLoading] = useState(false);
     const [error, setError] = useState<string | null>(null);
-    const [selectedIngredient, setSelectedIngredient] = useState('');
 
     const getIngredientTranslationKey = (name: string) => `ingredients.${name.toLowerCase().replace(/[ /()]/g, '')}`;
 
-    const handleAddIngredient = () => {
-        if (selectedIngredient) {
-            addIngredient(selectedIngredient);
-            setSelectedIngredient('');
-        }
+    const handleAddMultipleIngredients = (selectedIngredients: string[]) => {
+        selectedIngredients.forEach(ingredient => {
+            addIngredient(ingredient);
+        });
     };
     
     const availableToAdd = PHILIPPINE_FEEDS.filter(
@@ -166,27 +165,17 @@ export const MixWeights: React.FC<MixWeightsProps> = ({
                 </div>
             )}
 
-            <div className="my-4 p-4 bg-gray-50 rounded-lg border">
-                <label className="block text-sm font-medium text-gray-700 mb-1">{t('mixWeights.addIngredientLabel')}</label>
-                <div className="flex items-center gap-2">
-                    <select
-                        value={selectedIngredient}
-                        onChange={e => setSelectedIngredient(e.target.value)}
-                        className="flex-grow p-2 border rounded-lg focus:ring-2 focus:ring-red-500 focus:border-red-500 transition bg-white border-gray-300"
-                    >
-                        <option value="">{t('mixWeights.selectPlaceholder')}</option>
-                        {availableToAdd.map(ing => (
-                            <option key={ing.name} value={ing.name}>{t(getIngredientTranslationKey(ing.name))}</option>
-                        ))}
-                    </select>
-                    <button
-                        onClick={handleAddIngredient}
-                        disabled={!selectedIngredient}
-                        className="px-4 py-2 bg-gray-700 text-white font-semibold rounded-lg hover:bg-gray-800 transition shadow-sm disabled:bg-gray-400"
-                    >
-                        {t('mixWeights.addButton')}
-                    </button>
-                </div>
+            <div className="my-6">
+                <MultiSelectDropdown
+                    options={availableToAdd.map(ing => ({
+                        value: ing.name,
+                        label: t(getIngredientTranslationKey(ing.name))
+                    }))}
+                    onAddSelected={handleAddMultipleIngredients}
+                    placeholder={t('mixWeights.selectPlaceholder')}
+                    addButtonText={t('mixWeights.addSelectedButton')}
+                    label={t('mixWeights.addIngredientLabel')}
+                />
             </div>
 
             <div className="overflow-x-auto">

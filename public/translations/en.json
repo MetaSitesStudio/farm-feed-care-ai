@@ -45,9 +45,10 @@
     "optimizingFermentationButton": "Optimizing for Fermentation...",
     "fermentationMode": "Fermentation Mode Active",
     "fermentationModeNote": "AI will optimize for fermented feed - prioritizing cheaper, high-fiber ingredients that improve during fermentation.",
-    "addIngredientLabel": "Add Available Ingredient",
-    "selectPlaceholder": "-- Select an ingredient --",
+    "addIngredientLabel": "Add Available Ingredients",
+    "selectPlaceholder": "Select ingredients to add...",
     "addButton": "Add",
+    "addSelectedButton": "Add Selected",
     "error": {
       "prefix": "Optimization failed.",
       "suffix": "Please try again or adjust your inputs."
@@ -93,6 +94,12 @@
     "tabs": {
       "vaccination": "Vaccination Schedule",
       "therapies": "Alternative Therapies"
+    },
+    "buttons": {
+      "vaccination": "Vaccination Schedule",
+      "vaccinationDesc": "Get AI-generated vaccination recommendations for your animals",
+      "therapies": "Alternative Therapies",
+      "therapiesDesc": "Discover natural and traditional therapy options"
     },
     "loading": "Loading AI recommendations...",
     "error": {

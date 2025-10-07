@@ -45,9 +45,10 @@
     "optimizingFermentationButton": "Gi-optimize para sa Fermentation...",
     "fermentationMode": "Aktibo ang Fermentation Mode",
     "fermentationModeNote": "Ang AI mag-optimize para sa fermented feed - gi-prioritize ang mas barato, daghan fiber nga sangkap nga moayo sa fermentation.",
-    "addIngredientLabel": "Idugang ang Anaa nga Sagol",
-    "selectPlaceholder": "-- Pagpili og sagol --",
+    "addIngredientLabel": "Idugang ang mga Sagol",
+    "selectPlaceholder": "Pagpili og mga sagol nga idugang...",
     "addButton": "Idugang",
+    "addSelectedButton": "Idugang ang Napili",
     "error": {
       "prefix": "Napakyas ang pag-optimize.",
       "suffix": "Palihug sulayi pag-usab o i-adjust ang imong mga input."
@@ -93,6 +94,12 @@
     "tabs": {
       "vaccination": "Iskedyul sa Pagbakuna",
       "therapies": "Mga Alternatibong Tambal"
+    },
+    "buttons": {
+      "vaccination": "Iskedyul sa Pagbakuna",
+      "vaccinationDesc": "Kuhaon ang mga rekomendasyon sa AI para sa pagbakuna sa inyong mga hayop",
+      "therapies": "Mga Alternatibong Tambal",
+      "therapiesDesc": "Pag-aram sa mga natural ug tradisyonal nga pamaagi sa pagtambal"
     },
     "loading": "Gikarga ang mga rekomendasyon sa AI...",
     "error": {

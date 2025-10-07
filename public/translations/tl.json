@@ -45,9 +45,10 @@
     "optimizingFermentationButton": "Nag-o-optimize para sa Fermentation...",
     "fermentationMode": "Aktibong Fermentation Mode",
     "fermentationModeNote": "Ang AI ay mag-o-optimize para sa fermented feed - inuuna ang mas murang, mataas ang fiber na sangkap na bumubuti sa fermentation.",
-    "addIngredientLabel": "Magdagdag ng Sangkap",
-    "selectPlaceholder": "-- Pumili ng sangkap --",
+    "addIngredientLabel": "Magdagdag ng mga Sangkap",
+    "selectPlaceholder": "Pumili ng mga sangkap na idadagdag...",
     "addButton": "Idagdag",
+    "addSelectedButton": "Idagdag ang Napili",
     "error": {
       "prefix": "Nabigo ang pag-optimize.",
       "suffix": "Pakisubukang muli o ayusin ang iyong mga input."
@@ -93,6 +94,12 @@
     "tabs": {
       "vaccination": "Iskedyul ng Pagbabakuna",
       "therapies": "Mga Alternatibong Lunas"
+    },
+    "buttons": {
+      "vaccination": "Iskedyul ng Pagbabakuna",
+      "vaccinationDesc": "Kunin ang mga rekomendasyon ng AI para sa pagbabakuna ng inyong mga hayop",
+      "therapies": "Mga Alternatibong Lunas",
+      "therapiesDesc": "Tuklasin ang mga natural at tradisyonal na paraan ng paggamot"
     },
     "loading": "Nilo-load ang mga rekomendasyon ng AI...",
     "error": {
