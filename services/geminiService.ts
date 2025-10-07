@@ -1,8 +1,20 @@
 import { GoogleGenAI, Type } from "@google/genai";
 import type { FeedIngredient, NutritionalTarget, IndustrialFeed, VaccinationScheduleResponse, AlternativeTherapiesResponse } from '../types';
 
-// FIX: Correctly initialize GoogleGenAI and use API_KEY from environment variables directly as per guidelines.
-const ai = new GoogleGenAI({ apiKey: process.env.API_KEY! });
+// Get API key from environment variables at runtime
+const getApiKey = (): string => {
+  // In production (Netlify), GEMINI_API_KEY is available as import.meta.env.GEMINI_API_KEY
+  // In development, we might use VITE_GEMINI_API_KEY
+  const apiKey = import.meta.env.GEMINI_API_KEY || import.meta.env.VITE_GEMINI_API_KEY;
+  
+  if (!apiKey) {
+    throw new Error('GEMINI_API_KEY not found. Please set environment variable.');
+  }
+  
+  return apiKey;
+};
+
+const ai = new GoogleGenAI({ apiKey: getApiKey() });
 
 const model = 'gemini-2.5-flash';
 

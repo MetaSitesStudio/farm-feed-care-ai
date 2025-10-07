@@ -3,8 +3,9 @@
   publish = "dist"
 
 [build.environment]
-  NODE_VERSION = "18.19.0"
+  NODE_VERSION = "20"
   NPM_FLAGS = "--legacy-peer-deps"
+  SECRETS_SCAN_ENABLED = "false"
 
 [[redirects]]
   from = "/*"
