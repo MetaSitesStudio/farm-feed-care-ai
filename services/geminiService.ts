@@ -50,6 +50,7 @@ export const getFeedSuggestion = async (
   naturalIngredients: FeedIngredient[],
   industrialFeed: IndustrialFeed,
   targets: NutritionalTarget[],
+  feedingMode: 'Direct' | 'Fermentation' = 'Direct',
 ): Promise<{name: string, weight: number}[]> => {
   try {
     const lockedIngredients = naturalIngredients.filter(i => i.locked).map(i => `${i.name} at ${i.weight.toFixed(2)} kg (Cost: ${i.pricePerKg || 0} PHP/kg)`).join(', ') || 'None';
@@ -67,10 +68,41 @@ export const getFeedSuggestion = async (
       2.  **Pool of Usable Natural Ingredients:** None. Only use the locked ingredients and commercial feed.
     `;
 
+    // Fermentation considerations
+    const fermentationGuidance = feedingMode === 'Fermentation' ? `
+      
+      **IMPORTANT - FERMENTATION MODE:**
+      This feed mix will be FERMENTED before feeding. Consider these fermentation effects and optimize accordingly:
+      
+      **Fermentation Benefits:**
+      - Increases protein digestibility by 15-25% (reduce protein targets by 10-15%)
+      - Breaks down anti-nutritional factors in raw ingredients
+      - Increases B-vitamin content naturally
+      - Improves fiber digestibility by 10-15%
+      - Creates beneficial probiotics for gut health
+      - Reduces feed cost by making cheaper, fibrous ingredients more nutritious
+      
+      **Best Ingredients for Fermentation (prioritize these):**
+      - Rice Bran (Darak) - excellent for fermentation, high nutrients
+      - Broken Rice - provides carbohydrates for fermentation
+      - Banana Peels (Dried) - cheap, ferments well, good fiber
+      - Kitchen Scraps (Vegetable) - very cheap, ferments easily
+      - Molasses - provides sugar for fermentation process
+      - Sweet Potato Leaves (Camote Tops) - good protein, ferments well
+      - Cassava (Fresh Root) - starchy, feeds fermentation bacteria
+      - Pineapple Waste - natural enzymes help fermentation
+      
+      **Fermentation Strategy:**
+      - Use 10-20% more fibrous/cheaper ingredients than normal
+      - Reduce expensive commercial feed proportion
+      - Include molasses (2-5% of mix) to kick-start fermentation
+      - Target slightly lower protein levels since fermentation will increase bioavailability
+      ` : '';
+
     const prompt = `
       As an expert animal nutritionist in the Philippines, your task is to solve a feed formulation problem with a primary goal of minimizing cost for a farmer.
 
-      **Goal:** Create the absolute cheapest feed mix for a ${animal} (${subSpecies}) that weighs exactly ${totalFeed.toFixed(2)} kg, while staying within healthy nutritional guidelines. Your primary objective is to minimize the total cost.
+      **Goal:** Create the absolute cheapest feed mix for a ${animal} (${subSpecies}) that weighs exactly ${totalFeed.toFixed(2)} kg, while staying within healthy nutritional guidelines. Your primary objective is to minimize the total cost.${fermentationGuidance}
 
       **Nutritional Guidelines (per 100g of the final mix):**
       These are important targets, but some flexibility is allowed to achieve the lowest possible cost.
@@ -228,6 +260,56 @@ export const getAlternativeTherapies = async (animal: string, subSpecies: string
             introduction: "Could not retrieve alternative therapies at this time.",
             therapies: [],
             disclaimer: "Information is not available. Always consult a professional."
+        };
+    }
+};
+
+export const getFermentationGuidance = async (animal: string, subSpecies: string, feedIngredients: string[]): Promise<{ guidance: string; steps: string[]; tips: string[] }> => {
+    try {
+        const ingredientsList = feedIngredients.join(', ');
+        const prompt = `Generate fermentation guidance for ${animal} (${subSpecies}) feed using these ingredients: ${ingredientsList}. 
+        
+        Provide:
+        1. A brief introduction about fermentation benefits for this animal
+        2. Step-by-step fermentation process (5-7 steps)
+        3. Practical tips for farmers in the Philippines
+        
+        Focus on local practices, simple equipment, and cost-effective methods.`;
+        
+        // Use existing ai instance
+        const response = await ai.models.generateContent({
+            model: model,
+            contents: prompt,
+            config: {
+                responseMimeType: "application/json",
+                responseSchema: {
+                    type: Type.OBJECT,
+                    properties: {
+                        guidance: { type: Type.STRING },
+                        steps: {
+                            type: Type.ARRAY,
+                            items: { type: Type.STRING }
+                        },
+                        tips: {
+                            type: Type.ARRAY,
+                            items: { type: Type.STRING }
+                        }
+                    }
+                }
+            }
+        });
+        
+        const result = parseJsonFromResponse(response.text);
+        if (!result) {
+            throw new Error("AI returned invalid data for fermentation guidance.");
+        }
+        return result;
+    } catch (error) {
+        console.error("Error fetching fermentation guidance:", error);
+        return {
+            guidance: "Could not retrieve fermentation guidance at this time.",
+            steps: ["Please consult a fermentation guide or agricultural extension worker."],
+            tips: ["Always ensure proper hygiene when fermenting animal feeds."]
         };
     }
 };

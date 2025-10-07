@@ -40,7 +40,11 @@
     "subtitle": "Gamita ang dropdown aron idugang ang mga sagol nga anaa kanimo, unya gamita ang AI aron makahimo og balanseng sagol.",
     "resetButton": "I-reset ang Sagol",
     "optimizeButton": "I-optimize gamit ang Natural Feeds",
+    "optimizeFermentationButton": "I-optimize para sa Fermentation",
     "optimizingButton": "Nag-optimize...",
+    "optimizingFermentationButton": "Gi-optimize para sa Fermentation...",
+    "fermentationMode": "Aktibo ang Fermentation Mode",
+    "fermentationModeNote": "Ang AI mag-optimize para sa fermented feed - gi-prioritize ang mas barato, daghan fiber nga sangkap nga moayo sa fermentation.",
     "addIngredientLabel": "Idugang ang Anaa nga Sagol",
     "selectPlaceholder": "-- Pagpili og sagol --",
     "addButton": "Idugang",
@@ -175,6 +179,10 @@
     "sorghumgrain": "Binhi sa Sorghum",
     "soybeanmeal": "Soybean Meal",
     "sweetpotatoleavescamotetops": "Kamote Tops (Sweet Potato Leaves)",
-    "tarogabicorms": "Gabi (Taro)"
+    "tarogabicorms": "Gabi (Taro)",
+    "bananapeelsdried": "Uga sa Saging (Uga)",
+    "kitchenscrapsvegetable": "Salin sa Utanon sa Kusina",
+    "molasses": "Molasses",
+    "pineapplewaste": "Basura sa Pinya"
   }
 }

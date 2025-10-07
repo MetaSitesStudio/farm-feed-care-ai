@@ -21,6 +21,7 @@ interface MixWeightsProps {
   baseTargets: NutritionalTarget[];
   addIngredient: (name: string) => void;
   removeIngredient: (index: number) => void;
+  feedingMode: 'Direct' | 'Fermentation';
 }
 
 export const MixWeights: React.FC<MixWeightsProps> = ({
@@ -38,6 +39,7 @@ export const MixWeights: React.FC<MixWeightsProps> = ({
   baseTargets,
   addIngredient,
   removeIngredient,
+  feedingMode,
 }) => {
     const { t } = useTranslation();
     const [isLoading, setIsLoading] = useState(false);
@@ -62,7 +64,7 @@ export const MixWeights: React.FC<MixWeightsProps> = ({
         setIsLoading(true);
         setError(null);
         try {
-            const suggestedMix = await getFeedSuggestion(animal, subSpecies, totalFeed, ingredients, industrialFeed, baseTargets);
+            const suggestedMix = await getFeedSuggestion(animal, subSpecies, totalFeed, ingredients, industrialFeed, baseTargets, feedingMode);
             
             if (suggestedMix) {
                 // Update natural ingredients based on what's currently in the user's list
@@ -116,7 +118,11 @@ export const MixWeights: React.FC<MixWeightsProps> = ({
                     <button
                         onClick={handleSuggestMix}
                         disabled={isLoading || !industrialFeed || ingredients.length === 0}
-                        className="px-4 py-2 bg-red-600 text-white font-semibold rounded-lg hover:bg-red-700 transition shadow-sm disabled:bg-red-300 disabled:cursor-not-allowed"
+                        className={`px-4 py-2 font-semibold rounded-lg transition shadow-sm disabled:cursor-not-allowed ${
+                            feedingMode === 'Fermentation' 
+                                ? 'bg-purple-600 text-white hover:bg-purple-700 disabled:bg-purple-300' 
+                                : 'bg-red-600 text-white hover:bg-red-700 disabled:bg-red-300'
+                        }`}
                     >
                         {isLoading ? (
                             <div className="flex items-center">
@@ -124,9 +130,16 @@ export const MixWeights: React.FC<MixWeightsProps> = ({
                                     <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4"></circle>
                                     <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
                                 </svg>
-                                {t('mixWeights.optimizingButton')}
+                                {feedingMode === 'Fermentation' ? t('mixWeights.optimizingFermentationButton') : t('mixWeights.optimizingButton')}
                             </div>
-                        ) : t('mixWeights.optimizeButton')}
+                        ) : (
+                            <div className="flex items-center">
+                                {feedingMode === 'Fermentation' && (
+                                    <span className="mr-2">🧫</span>
+                                )}
+                                {feedingMode === 'Fermentation' ? t('mixWeights.optimizeFermentationButton') : t('mixWeights.optimizeButton')}
+                            </div>
+                        )}
                     </button>
                 </div>
             </div>
@@ -134,6 +147,18 @@ export const MixWeights: React.FC<MixWeightsProps> = ({
             <p className="text-sm text-gray-500 mb-4 -mt-2">
                 {t('mixWeights.subtitle')}
             </p>
+
+            {feedingMode === 'Fermentation' && (
+                <div className="mb-4 p-3 bg-purple-50 border border-purple-200 rounded-lg">
+                    <div className="flex items-center">
+                        <span className="text-2xl mr-2">🧫</span>
+                        <div>
+                            <h3 className="font-semibold text-purple-800">{t('mixWeights.fermentationMode')}</h3>
+                            <p className="text-sm text-purple-600">{t('mixWeights.fermentationModeNote')}</p>
+                        </div>
+                    </div>
+                </div>
+            )}
 
             {error && (
                 <div className="my-4 p-3 bg-red-100 border border-red-400 text-red-700 rounded-lg" role="alert">

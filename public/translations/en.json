@@ -40,7 +40,11 @@
     "subtitle": "Use the dropdown to add ingredients you have on hand, then use the AI to create a balanced mix.",
     "resetButton": "Reset Mix",
     "optimizeButton": "Optimize with Natural Feeds",
+    "optimizeFermentationButton": "Optimize for Fermentation",
     "optimizingButton": "Optimizing...",
+    "optimizingFermentationButton": "Optimizing for Fermentation...",
+    "fermentationMode": "Fermentation Mode Active",
+    "fermentationModeNote": "AI will optimize for fermented feed - prioritizing cheaper, high-fiber ingredients that improve during fermentation.",
     "addIngredientLabel": "Add Available Ingredient",
     "selectPlaceholder": "-- Select an ingredient --",
     "addButton": "Add",
@@ -175,6 +179,10 @@
     "sorghumgrain": "Sorghum Grain",
     "soybeanmeal": "Soybean Meal",
     "sweetpotatoleavescamotetops": "Sweet Potato Leaves (Camote Tops)",
-    "tarogabicorms": "Taro (Gabi) Corms"
+    "tarogabicorms": "Taro (Gabi) Corms",
+    "bananapeelsdried": "Banana Peels (Dried)",
+    "kitchenscrapsvegetable": "Kitchen Scraps (Vegetable)",
+    "molasses": "Molasses",
+    "pineapplewaste": "Pineapple Waste"
   }
 }

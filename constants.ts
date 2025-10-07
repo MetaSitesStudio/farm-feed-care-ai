@@ -49,6 +49,10 @@ export const PHILIPPINE_FEEDS: FeedIngredient[] = [
     { name: 'Soybean Meal', weight: 0, locked: false, nutrients: { energy: 335, protein: 44, fat: 1.5, fiber: 6, calcium: 0.3, phosphorus: 0.65 } },
     { name: 'Sweet Potato Leaves (Camote Tops)', weight: 0, locked: false, nutrients: { energy: 45, protein: 4, fat: 0.5, fiber: 3.5, calcium: 0.5, phosphorus: 0.1 } },
     { name: 'Taro (Gabi) Corms', weight: 0, locked: false, nutrients: { energy: 112, protein: 1.5, fat: 0.2, fiber: 2.9, calcium: 0.04, phosphorus: 0.06 } },
+    { name: 'Banana Peels (Dried)', weight: 0, locked: false, nutrients: { energy: 90, protein: 1.8, fat: 0.5, fiber: 8.0, calcium: 0.08, phosphorus: 0.04 } },
+    { name: 'Kitchen Scraps (Vegetable)', weight: 0, locked: false, nutrients: { energy: 35, protein: 2.0, fat: 0.2, fiber: 4.0, calcium: 0.06, phosphorus: 0.03 } },
+    { name: 'Molasses', weight: 0, locked: false, nutrients: { energy: 260, protein: 3.0, fat: 0.1, fiber: 0.0, calcium: 0.2, phosphorus: 0.05 } },
+    { name: 'Pineapple Waste', weight: 0, locked: false, nutrients: { energy: 50, protein: 0.5, fat: 0.1, fiber: 1.5, calcium: 0.01, phosphorus: 0.01 } },
 ];
 
 export const INDUSTRIAL_FEEDS: IndustrialFeed[] = [

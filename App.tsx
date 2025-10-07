@@ -269,6 +269,7 @@ const App: React.FC = () => {
               baseTargets={baseTargets}
               addIngredient={addNaturalIngredient}
               removeIngredient={removeNaturalIngredient}
+              feedingMode={params.mode}
             />
           </div>
 
