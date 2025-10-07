@@ -1,0 +1,180 @@
+
+{
+  "header": {
+    "title": {
+      "part1": "Pagkain at Alaga",
+      "part2": "AI"
+    },
+    "subtitle": "Matalinong solusyon sa pagpapakain para sa iyong mga alagang hayop.",
+    "languageSelectorLabel": "Pumili ng Wika"
+  },
+  "animalSelector": {
+    "title": "Pumili ng Hayop",
+    "animalTypeLabel": "Uri ng Hayop",
+    "subspeciesLabel": "Sub-species / Yugto"
+  },
+  "parameters": {
+    "title": "Mga Parametro",
+    "numberOfAnimals": "Bilang ng Hayop",
+    "recommendedFeed": "Inirerekomendang Dami (g/araw)",
+    "dailyTotal": "Kabuuang Dami (kg/araw)",
+    "feedingMode": "Paraan ng Pagpapakain",
+    "directFeeding": "Direktang Pagpapakain",
+    "fermentation": "Fermentation",
+    "fermentationNote": "Ang fermentation ay maaaring magpataas ng pagsipsip ng sustansya. Mangyaring kumonsulta sa isang gabay para sa tamang pamamaraan."
+  },
+  "commercialFeed": {
+    "title": "Commercial Feed at Matitipid",
+    "feedType": "Uri ng Feeds",
+    "pricePerKg": "Presyo kada kg (PHP)",
+    "calculatedAmount": "Nakalkulang Dami (kg/araw)",
+    "totalPotentialCost": "Potensyal na Gastos",
+    "potentialCostNote": "(Commercial feed lang)",
+    "currentTotalCost": "Kasalukuyang Kabuuang Gastos",
+    "currentCostNote": "(Commercial + Natural)",
+    "dailySavings": "Matitipid Araw-araw",
+    "savingsNote": "(Perang matitipid mo)"
+  },
+  "mixWeights": {
+    "title": "Halo ng mga Natural na Sangkap",
+    "subtitle": "Gamitin ang dropdown para magdagdag ng mga sangkap na mayroon ka, pagkatapos ay gamitin ang AI para gumawa ng balanseng halo.",
+    "resetButton": "I-reset ang Halo",
+    "optimizeButton": "I-optimize gamit ang Natural Feeds",
+    "optimizingButton": "Nag-o-optimize...",
+    "addIngredientLabel": "Magdagdag ng Sangkap",
+    "selectPlaceholder": "-- Pumili ng sangkap --",
+    "addButton": "Idagdag",
+    "error": {
+      "prefix": "Nabigo ang pag-optimize.",
+      "suffix": "Pakisubukang muli o ayusin ang iyong mga input."
+    },
+    "table": {
+      "ingredient": "Sangkap",
+      "weightSlider": "Timbang (slider)",
+      "weightKg": "Timbang (kg)",
+      "pricePerKg": "Presyo/kg (PHP)",
+      "locked": "Naka-lock",
+      "naturalMixCost": "Gastos sa Natural na Halo",
+      "commercialCost": "Gastos sa Commercial",
+      "totalMixCost": "Kabuuang Gastos ng Halo",
+      "totalMixWeight": "Kabuuang Timbang ng Halo"
+    },
+    "noIngredients": {
+      "line1": "Wala pang natural na sangkap na naidagdag.",
+      "line2": "Pumili ng mga sangkap na mayroon ka mula sa dropdown sa itaas para magsimula."
+    }
+  },
+  "nutrientBlends": {
+    "title": "Mga Sustansya ng Halo",
+    "table": {
+      "nutrient": "Sustansya",
+      "per100g": "kada 100 g",
+      "per1kg": "kada 1 kg",
+      "perAnimal": "kada hayop/araw",
+      "totalDay": "kabuuan/araw"
+    }
+  },
+  "targetsComparison": {
+    "title": "Mga Target at Paghahambing (kada hayop/araw)",
+    "table": {
+      "nutrient": "Sustansya",
+      "actual": "Aktuwal",
+      "goalRange": "Saklaw ng Target",
+      "unit": "Yunit",
+      "status": "Katayuan"
+    }
+  },
+  "additionalInfo": {
+    "title": "Karagdagang Impormasyon",
+    "tabs": {
+      "vaccination": "Iskedyul ng Pagbabakuna",
+      "therapies": "Mga Alternatibong Lunas"
+    },
+    "loading": "Nilo-load ang mga rekomendasyon ng AI...",
+    "error": {
+      "prefix": "Nabigong i-load ang nilalaman para sa"
+    },
+    "notes": "Mga Tala",
+    "disclaimer": "Paunawa",
+    "therapies": {
+      "benefit": "Benepisyo",
+      "administration": "Pamamahala"
+    },
+    "noData": "Walang available na data."
+  },
+  "status": {
+    "low": "Mababa",
+    "met": "Sapat",
+    "high": "Mataas",
+    "n/a": "N/A"
+  },
+  "animals": {
+    "chicken": "Manok",
+    "pig": "Baboy",
+    "quail": "Pugo",
+    "rabbit": "Kuneho",
+    "goat": "Kambing",
+    "cow": "Baka",
+    "waterbuffalo": "Kalabaw",
+    "goose": "Gansa",
+    "duck": "Pato",
+    "turkey": "Pabo",
+    "tilapia": "Tilapia"
+  },
+  "subspecies": {
+    "broiler": "Broiler",
+    "layer": "Layer",
+    "native": "Native",
+    "grower": "Grower",
+    "finisher": "Finisher",
+    "sow": "Inahin",
+    "starter": "Starter",
+    "fryer": "Fryer",
+    "breeder": "Breeder",
+    "meattype": "Uri ng Karne",
+    "dairytype": "Uri ng Gatas",
+    "beefcattle": "Bakang Pangkarne",
+    "dairycow": "Bakang Panggatas",
+    "carabao": "Kalabaw",
+    "all": "Lahat",
+    "meat": "Karne",
+    "fingerling": "Fingerling",
+    "grow-out": "Grow-out"
+  },
+  "ingredients": {
+    "alugbatimalabarspinach": "Alugbati (Malabar Spinach)",
+    "azolla": "Azolla",
+    "banabaleaves": "Dahon ng Banaba",
+    "bananastems&leaves": "Puno at Dahon ng Saging",
+    "brokenrice": "Durog na Bigas",
+    "cassavafreshroot": "Sariwang Kamoteng Kahoy",
+    "centrosema": "Centrosema",
+    "coprameal": "Copra Meal",
+    "cornyellow": "Mais (Dilaw)",
+    "duckweed": "Duckweed",
+    "fruitspapayabanana": "Mga Prutas (Papaya/Saging)",
+    "greenbananasaba": "Saging na Saba (Hilaw)",
+    "guineagrass": "Guinea Grass",
+    "indigofera": "Indigofera",
+    "ipil-ipilleaves": "Dahon ng Ipil-ipil",
+    "kakawate/madredecacao": "Kakawate / Madre de Cacao",
+    "kangkongwaterspinach": "Kangkong (Water Spinach)",
+    "lagundileaves": "Dahon ng Lagundi",
+    "lemongrasstanglad": "Tanglad (Lemongrass)",
+    "madredeagua": "Madre de Agua",
+    "malunggaymoringaleaves": "Dahon ng Malunggay (Moringa)",
+    "napiergrass": "Napier Grass",
+    "oreganoleaves": "Dahon ng Oregano",
+    "paragrass": "Paragrass",
+    "purpleyamube": "Ube (Purple Yam)",
+    "ricebrandarak": "Darak (Rice Bran)",
+    "ricehulls": "Ipa ng Palay",
+    "saluyotjutemallowleaves": "Dahon ng Saluyot (Jute Mallow)",
+    "sambongleaves": "Dahon ng Sambong",
+    "sealettuce": "Sea Lettuce",
+    "sorghumgrain": "Butil ng Sorghum",
+    "soybeanmeal": "Soybean Meal",
+    "sweetpotatoleavescamotetops": "Talbos ng Kamote (Camote Tops)",
+    "tarogabicorms": "Gabi (Taro)"
+  }
+}

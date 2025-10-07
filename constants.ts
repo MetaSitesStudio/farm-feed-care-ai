@@ -1,0 +1,146 @@
+import type { Animal, FeedIngredient, IndustrialFeed, AnimalTargets } from './types';
+
+export const ANIMALS: Animal[] = [
+  { name: 'Chicken', subSpecies: ['Broiler', 'Layer', 'Native'], recommendedFeed: { 'Broiler': 150, 'Layer': 120, 'Native': 100 } },
+  { name: 'Pig', subSpecies: ['Grower', 'Finisher', 'Sow'], recommendedFeed: { 'Grower': 2500, 'Finisher': 3000, 'Sow': 2200 } },
+  { name: 'Quail', subSpecies: ['Starter', 'Layer'], recommendedFeed: { 'Starter': 15, 'Layer': 25 } },
+  { name: 'Rabbit', subSpecies: ['Fryer', 'Breeder'], recommendedFeed: { 'Fryer': 120, 'Breeder': 150 } },
+  { name: 'Goat', subSpecies: ['Meat Type', 'Dairy Type'], recommendedFeed: { 'Meat Type': 1500, 'Dairy Type': 2000 } },
+  { name: 'Cow', subSpecies: ['Beef Cattle', 'Dairy Cow'], recommendedFeed: { 'Beef Cattle': 10000, 'Dairy Cow': 15000 } },
+  { name: 'Water Buffalo', subSpecies: ['Carabao'], recommendedFeed: { 'Carabao': 12000 } },
+  { name: 'Goose', subSpecies: ['All'], recommendedFeed: { 'All': 300 } },
+  { name: 'Duck', subSpecies: ['Layer', 'Meat'], recommendedFeed: { 'Layer': 150, 'Meat': 200 } },
+  { name: 'Turkey', subSpecies: ['All'], recommendedFeed: { 'All': 400 } },
+  { name: 'Tilapia', subSpecies: ['Fingerling', 'Grow-out'], recommendedFeed: { 'Fingerling': 10, 'Grow-out': 30 } },
+];
+
+export const PHILIPPINE_FEEDS: FeedIngredient[] = [
+    { name: 'Alugbati (Malabar Spinach)', weight: 0, locked: false, nutrients: { energy: 19, protein: 2.0, fat: 0.3, fiber: 1.5, calcium: 0.1, phosphorus: 0.05 } },
+    { name: 'Azolla', weight: 0, locked: false, nutrients: { energy: 40, protein: 4, fat: 0.6, fiber: 1.5, calcium: 0.1, phosphorus: 0.15 } },
+    { name: 'Banaba Leaves', weight: 0, locked: false, nutrients: { energy: 50, protein: 3, fat: 0.5, fiber: 8, calcium: 1.5, phosphorus: 0.2 } },
+    { name: 'Banana Stems & Leaves', weight: 0, locked: false, nutrients: { energy: 20, protein: 0.8, fat: 0.2, fiber: 3, calcium: 0.05, phosphorus: 0.02 } },
+    { name: 'Broken Rice', weight: 0, locked: false, nutrients: { energy: 360, protein: 7, fat: 0.5, fiber: 0.4, calcium: 0.01, phosphorus: 0.1 } },
+    { name: 'Cassava (Fresh Root)', weight: 0, locked: false, nutrients: { energy: 160, protein: 1.4, fat: 0.3, fiber: 1.8, calcium: 0.02, phosphorus: 0.03 } },
+    { name: 'Centrosema', weight: 0, locked: false, nutrients: { energy: 50, protein: 4.5, fat: 0.7, fiber: 6, calcium: 1.0, phosphorus: 0.2 } },
+    { name: 'Copra Meal', weight: 0, locked: false, nutrients: { energy: 280, protein: 20, fat: 8, fiber: 12, calcium: 0.15, phosphorus: 0.55 } },
+    { name: 'Corn (Yellow)', weight: 0, locked: false, nutrients: { energy: 365, protein: 9, fat: 4, fiber: 2.5, calcium: 0.02, phosphorus: 0.28 } },
+    { name: 'Duckweed', weight: 0, locked: false, nutrients: { energy: 30, protein: 3, fat: 0.5, fiber: 1.2, calcium: 0.1, phosphorus: 0.1 } },
+    { name: 'Fruits (Papaya/Banana)', weight: 0, locked: false, nutrients: { energy: 70, protein: 1, fat: 0.3, fiber: 2, calcium: 0.02, phosphorus: 0.03 } },
+    { name: 'Green Banana (Saba)', weight: 0, locked: false, nutrients: { energy: 120, protein: 1.2, fat: 0.2, fiber: 2.0, calcium: 0.01, phosphorus: 0.03 } },
+    { name: 'Guinea Grass', weight: 0, locked: false, nutrients: { energy: 55, protein: 3, fat: 0.8, fiber: 7.5, calcium: 0.5, phosphorus: 0.3 } },
+    { name: 'Indigofera', weight: 0, locked: false, nutrients: { energy: 70, protein: 6.8, fat: 1.0, fiber: 6, calcium: 1.2, phosphorus: 0.25 } },
+    { name: 'Ipil-ipil Leaves', weight: 0, locked: false, nutrients: { energy: 90, protein: 7.5, fat: 1, fiber: 5, calcium: 1.5, phosphorus: 0.2 } },
+    { name: 'Kakawate / Madre de Cacao', weight: 0, locked: false, nutrients: { energy: 60, protein: 5.5, fat: 0.8, fiber: 7, calcium: 1.8, phosphorus: 0.2 } },
+    { name: 'Kangkong (Water Spinach)', weight: 0, locked: false, nutrients: { energy: 20, protein: 2.6, fat: 0.2, fiber: 2.1, calcium: 0.08, phosphorus: 0.05 } },
+    { name: 'Lagundi Leaves', weight: 0, locked: false, nutrients: { energy: 40, protein: 2.5, fat: 0.5, fiber: 5, calcium: 0.5, phosphorus: 0.1 } },
+    { name: 'Lemongrass (Tanglad)', weight: 0, locked: false, nutrients: { energy: 99, protein: 1.8, fat: 0.5, fiber: 2.2, calcium: 0.06, phosphorus: 0.03 } },
+    { name: 'Madre de Agua', weight: 0, locked: false, nutrients: { energy: 55, protein: 4, fat: 0.6, fiber: 7, calcium: 0.5, phosphorus: 0.06 } },
+    { name: 'Malunggay (Moringa) Leaves', weight: 0, locked: false, nutrients: { energy: 65, protein: 6, fat: 1.5, fiber: 3, calcium: 2.0, phosphorus: 0.3 } },
+    { name: 'Napier Grass', weight: 0, locked: false, nutrients: { energy: 60, protein: 2, fat: 0.5, fiber: 8, calcium: 0.4, phosphorus: 0.05 } },
+    { name: 'Oregano Leaves', weight: 0, locked: false, nutrients: { energy: 45, protein: 3, fat: 1, fiber: 2.5, calcium: 1.6, phosphorus: 0.15 } },
+    { name: 'Paragrass', weight: 0, locked: false, nutrients: { energy: 40, protein: 2, fat: 0.5, fiber: 7, calcium: 0.3, phosphorus: 0.2 } },
+    { name: 'Purple Yam (Ube)', weight: 0, locked: false, nutrients: { energy: 120, protein: 1.5, fat: 0.1, fiber: 2.5, calcium: 0.02, phosphorus: 0.05 } },
+    { name: 'Rice Bran (Darak)', weight: 0, locked: false, nutrients: { energy: 320, protein: 13, fat: 14, fiber: 10, calcium: 0.07, phosphorus: 1.5 } },
+    { name: 'Rice Hulls', weight: 0, locked: false, nutrients: { energy: 150, protein: 3, fat: 1, fiber: 40, calcium: 0.1, phosphorus: 0.08 } },
+    { name: 'Saluyot (Jute Mallow) Leaves', weight: 0, locked: false, nutrients: { energy: 40, protein: 4.5, fat: 0.3, fiber: 2.0, calcium: 0.25, phosphorus: 0.1 } },
+    { name: 'Sambong Leaves', weight: 0, locked: false, nutrients: { energy: 35, protein: 2, fat: 0.4, fiber: 4, calcium: 0.4, phosphorus: 0.1 } },
+    { name: 'Sea Lettuce', weight: 0, locked: false, nutrients: { energy: 25, protein: 2, fat: 0.1, fiber: 3, calcium: 1.0, phosphorus: 0.2 } },
+    { name: 'Sorghum Grain', weight: 0, locked: false, nutrients: { energy: 330, protein: 11, fat: 3.3, fiber: 2.3, calcium: 0.03, phosphorus: 0.28 } },
+    { name: 'Soybean Meal', weight: 0, locked: false, nutrients: { energy: 335, protein: 44, fat: 1.5, fiber: 6, calcium: 0.3, phosphorus: 0.65 } },
+    { name: 'Sweet Potato Leaves (Camote Tops)', weight: 0, locked: false, nutrients: { energy: 45, protein: 4, fat: 0.5, fiber: 3.5, calcium: 0.5, phosphorus: 0.1 } },
+    { name: 'Taro (Gabi) Corms', weight: 0, locked: false, nutrients: { energy: 112, protein: 1.5, fat: 0.2, fiber: 2.9, calcium: 0.04, phosphorus: 0.06 } },
+];
+
+export const INDUSTRIAL_FEEDS: IndustrialFeed[] = [
+  { name: 'Generic Poultry Feed', animal: ['Chicken', 'Duck', 'Goose', 'Turkey', 'Quail'], nutrients: { energy: 300, protein: 18, fat: 4, fiber: 5, calcium: 0.9, phosphorus: 0.45 }, pricePerKg: 30 },
+  { name: 'Broiler Starter Pellets', animal: ['Chicken'], subSpecies: ['Broiler'], nutrients: { energy: 300, protein: 22, fat: 5, fiber: 4, calcium: 1.0, phosphorus: 0.5 }, pricePerKg: 35 },
+  { name: 'Layer Mash', animal: ['Chicken'], subSpecies: ['Layer'], nutrients: { energy: 280, protein: 17, fat: 3.5, fiber: 6, calcium: 4.0, phosphorus: 0.4 }, pricePerKg: 32 },
+  { name: 'Generic Swine Feed', animal: ['Pig'], nutrients: { energy: 320, protein: 16, fat: 4, fiber: 6, calcium: 0.7, phosphorus: 0.55 }, pricePerKg: 28 },
+  { name: 'Pig Grower Pellets', animal: ['Pig'], subSpecies: ['Grower'], nutrients: { energy: 330, protein: 18, fat: 4, fiber: 5, calcium: 0.8, phosphorus: 0.6 }, pricePerKg: 33 },
+  { name: 'Sow Gestation Pellets', animal: ['Pig'], subSpecies: ['Sow'], nutrients: { energy: 300, protein: 14, fat: 3.5, fiber: 8, calcium: 0.9, phosphorus: 0.7 }, pricePerKg: 31 },
+  { name: 'Generic Ruminant Pellets', animal: ['Goat', 'Cow', 'Water Buffalo'], nutrients: { energy: 260, protein: 14, fat: 3, fiber: 15, calcium: 0.8, phosphorus: 0.4 }, pricePerKg: 25 },
+  { name: 'Rabbit Pellets', animal: ['Rabbit'], nutrients: { energy: 250, protein: 16, fat: 3, fiber: 18, calcium: 0.9, phosphorus: 0.5 }, pricePerKg: 45 },
+  { name: 'Generic Fish Feed', animal: ['Tilapia'], nutrients: { energy: 310, protein: 28, fat: 6, fiber: 5, calcium: 1.5, phosphorus: 1.0 }, pricePerKg: 40 },
+];
+
+// Target nutrient values per 100g of feed
+export const NUTRITIONAL_TARGETS: { [key: string]: AnimalTargets } = {
+  Chicken: {
+    Broiler: [
+      { name: 'Energy (kcal)', target: 300 },
+      { name: 'Protein (g)', target: 22 },
+      { name: 'Crude Fiber (g)', target: 4 },
+      { name: 'Calcium (g)', target: 1.0 },
+      { name: 'Phosphorus (g)', target: 0.5 },
+    ],
+    Layer: [
+      { name: 'Energy (kcal)', target: 280 },
+      { name: 'Protein (g)', target: 17 },
+      { name: 'Crude Fiber (g)', target: 5 },
+      { name: 'Calcium (g)', target: 4.0 },
+      { name: 'Phosphorus (g)', target: 0.4 },
+    ],
+    Native: [
+      { name: 'Energy (kcal)', target: 285 },
+      { name: 'Protein (g)', target: 16 },
+      { name: 'Crude Fiber (g)', target: 6 },
+      { name: 'Calcium (g)', target: 1.1 },
+      { name: 'Phosphorus (g)', target: 0.5 },
+    ],
+  },
+  Pig: {
+    Grower: [
+      { name: 'Energy (kcal)', target: 330 },
+      { name: 'Protein (g)', target: 18 },
+      { name: 'Crude Fiber (g)', target: 5 },
+      { name: 'Calcium (g)', target: 0.8 },
+      { name: 'Phosphorus (g)', target: 0.6 },
+    ],
+    Finisher: [
+      { name: 'Energy (kcal)', target: 320 },
+      { name: 'Protein (g)', target: 14 },
+      { name: 'Crude Fiber (g)', target: 6 },
+      { name: 'Calcium (g)', target: 0.7 },
+      { name: 'Phosphorus (g)', target: 0.5 },
+    ],
+     Sow: [
+      { name: 'Energy (kcal)', target: 300 },
+      { name: 'Protein (g)', target: 14 },
+      { name: 'Crude Fiber (g)', target: 8 },
+      { name: 'Calcium (g)', target: 0.9 },
+      { name: 'Phosphorus (g)', target: 0.7 },
+    ],
+  },
+  Quail: {
+    Starter: [
+      { name: 'Energy (kcal)', target: 290 },
+      { name: 'Protein (g)', target: 24 },
+      { name: 'Crude Fiber (g)', target: 5 },
+      { name: 'Calcium (g)', target: 0.9 },
+      { name: 'Phosphorus (g)', target: 0.45 },
+    ],
+    Layer: [
+      { name: 'Energy (kcal)', target: 280 },
+      { name: 'Protein (g)', target: 20 },
+      { name: 'Crude Fiber (g)', target: 6 },
+      { name: 'Calcium (g)', target: 2.5 },
+      { name: 'Phosphorus (g)', target: 0.4 },
+    ],
+  },
+   Rabbit: {
+    Fryer: [
+      { name: 'Energy (kcal)', target: 250 },
+      { name: 'Protein (g)', target: 16 },
+      { name: 'Crude Fiber (g)', target: 18 },
+      { name: 'Calcium (g)', target: 0.9 },
+      { name: 'Phosphorus (g)', target: 0.5 },
+    ],
+    Breeder: [
+      { name: 'Energy (kcal)', target: 250 },
+      { name: 'Protein (g)', target: 18 },
+      { name: 'Crude Fiber (g)', target: 16 },
+      { name: 'Calcium (g)', target: 1.0 },
+      { name: 'Phosphorus (g)', target: 0.6 },
+    ],
+  }
+};

@@ -1,0 +1,180 @@
+
+{
+  "header": {
+    "title": {
+      "part1": "Pagkaon ug Pag-atiman",
+      "part2": "AI"
+    },
+    "subtitle": "Intelihenteng solusyon sa pagpakaon alang sa imong mga kahayupan.",
+    "languageSelectorLabel": "Pilia ang Pinulongan"
+  },
+  "animalSelector": {
+    "title": "Pilia ang Hayop",
+    "animalTypeLabel": "Uri sa Hayop",
+    "subspeciesLabel": "Sub-species / Ang-ang"
+  },
+  "parameters": {
+    "title": "Mga Parameter",
+    "numberOfAnimals": "Gidaghanon sa Hayop",
+    "recommendedFeed": "Girekomenda nga Pagkaon (g/adlaw)",
+    "dailyTotal": "Kinatibuk-ang Dami (kg/adlaw)",
+    "feedingMode": "Pamaagi sa Pagpakaon",
+    "directFeeding": "Direkta nga Pagpakaon",
+    "fermentation": "Fermentation",
+    "fermentationNote": "Ang fermentation makadugang sa pagsuyop sa sustansya. Palihug konsultaha ang usa ka giya alang sa saktong pamaagi."
+  },
+  "commercialFeed": {
+    "title": "Commercial Feed ug Madaginot",
+    "feedType": "Matang sa Feeds",
+    "pricePerKg": "Presyo matag kg (PHP)",
+    "calculatedAmount": "Gikalkula nga Gidaghanon (kg/adlaw)",
+    "totalPotentialCost": "Potensyal nga Gasto",
+    "potentialCostNote": "(Commercial feed lang)",
+    "currentTotalCost": "Kasamtangang Kinatibuk-ang Gasto",
+    "currentCostNote": "(Commercial + Natural)",
+    "dailySavings": "Madaginot Kada Adlaw",
+    "savingsNote": "(Kuwarta nga imong madaginot)"
+  },
+  "mixWeights": {
+    "title": "Sagol sa mga Natural nga Sagol",
+    "subtitle": "Gamita ang dropdown aron idugang ang mga sagol nga anaa kanimo, unya gamita ang AI aron makahimo og balanseng sagol.",
+    "resetButton": "I-reset ang Sagol",
+    "optimizeButton": "I-optimize gamit ang Natural Feeds",
+    "optimizingButton": "Nag-optimize...",
+    "addIngredientLabel": "Idugang ang Anaa nga Sagol",
+    "selectPlaceholder": "-- Pagpili og sagol --",
+    "addButton": "Idugang",
+    "error": {
+      "prefix": "Napakyas ang pag-optimize.",
+      "suffix": "Palihug sulayi pag-usab o i-adjust ang imong mga input."
+    },
+    "table": {
+      "ingredient": "Sagol",
+      "weightSlider": "Gibug-aton (slider)",
+      "weightKg": "Gibug-aton (kg)",
+      "pricePerKg": "Presyo/kg (PHP)",
+      "locked": "Naka-lock",
+      "naturalMixCost": "Gasto sa Natural nga Sagol",
+      "commercialCost": "Gasto sa Commercial",
+      "totalMixCost": "Kinatibuk-ang Gasto sa Sagol",
+      "totalMixWeight": "Kinatibuk-ang Gibug-aton sa Sagol"
+    },
+    "noIngredients": {
+      "line1": "Wala pay natural nga sagol nga nadugang.",
+      "line2": "Pagpili og mga sagol nga anaa kanimo gikan sa dropdown sa ibabaw aron magsugod."
+    }
+  },
+  "nutrientBlends": {
+    "title": "Mga Sustansya sa Sagol",
+    "table": {
+      "nutrient": "Sustansya",
+      "per100g": "matag 100 g",
+      "per1kg": "matag 1 kg",
+      "perAnimal": "matag hayop/adlaw",
+      "totalDay": "kinatibuk-an/adlaw"
+    }
+  },
+  "targetsComparison": {
+    "title": "Mga Target ug Pagtandi (matag hayop/adlaw)",
+    "table": {
+      "nutrient": "Sustansya",
+      "actual": "Aktuwal",
+      "goalRange": "Sakop sa Target",
+      "unit": "Yunit",
+      "status": "Kahimtang"
+    }
+  },
+  "additionalInfo": {
+    "title": "Dugang nga Impormasyon",
+    "tabs": {
+      "vaccination": "Iskedyul sa Pagbakuna",
+      "therapies": "Mga Alternatibong Tambal"
+    },
+    "loading": "Gikarga ang mga rekomendasyon sa AI...",
+    "error": {
+      "prefix": "Napakyas sa pag-load sa sulod para sa"
+    },
+    "notes": "Mga Mubo nga Sulat",
+    "disclaimer": "Pahibalo",
+    "therapies": {
+      "benefit": "Benepisyo",
+      "administration": "Pagdumala"
+    },
+    "noData": "Walay data nga anaa."
+  },
+  "status": {
+    "low": "Ubos",
+    "met": "Sakto",
+    "high": "Taas",
+    "n/a": "N/A"
+  },
+  "animals": {
+    "chicken": "Manok",
+    "pig": "Baboy",
+    "quail": "Buntog",
+    "rabbit": "Koneho",
+    "goat": "Kanding",
+    "cow": "Baka",
+    "waterbuffalo": "Kabaw",
+    "goose": "Gansa",
+    "duck": "Pato",
+    "turkey": "Pabo",
+    "tilapia": "Tilapia"
+  },
+  "subspecies": {
+    "broiler": "Broiler",
+    "layer": "Layer",
+    "native": "Native",
+    "grower": "Grower",
+    "finisher": "Finisher",
+    "sow": "Anay",
+    "starter": "Starter",
+    "fryer": "Fryer",
+    "breeder": "Breeder",
+    "meattype": "Matang sa Karne",
+    "dairytype": "Matang sa Gatas",
+    "beefcattle": "Baka nga Pangkarne",
+    "dairycow": "Baka nga Panggatas",
+    "carabao": "Kabaw",
+    "all": "Tanan",
+    "meat": "Karne",
+    "fingerling": "Fingerling",
+    "grow-out": "Grow-out"
+  },
+  "ingredients": {
+    "alugbatimalabarspinach": "Alugbati (Malabar Spinach)",
+    "azolla": "Azolla",
+    "banabaleaves": "Dahon sa Banaba",
+    "bananastems&leaves": "Puno ug Dahon sa Saging",
+    "brokenrice": "Binlod nga Bugas",
+    "cassavafreshroot": "Preskong Balanghoy",
+    "centrosema": "Centrosema",
+    "coprameal": "Copra Meal",
+    "cornyellow": "Mais (Dalag)",
+    "duckweed": "Duckweed",
+    "fruitspapayabanana": "Mga Prutas (Kapayas/Saging)",
+    "greenbananasaba": "Saging Saba (Hilaw)",
+    "guineagrass": "Guinea Grass",
+    "indigofera": "Indigofera",
+    "ipil-ipilleaves": "Dahon sa Ipil-ipil",
+    "kakawate/madredecacao": "Kakawate / Madre de Cacao",
+    "kangkongwaterspinach": "Kangkong (Water Spinach)",
+    "lagundileaves": "Dahon sa Lagundi",
+    "lemongrasstanglad": "Tanglad (Lemongrass)",
+    "madredeagua": "Madre de Agua",
+    "malunggaymoringaleaves": "Dahon sa Malunggay (Moringa)",
+    "napiergrass": "Napier Grass",
+    "oreganoleaves": "Dahon sa Oregano",
+    "paragrass": "Paragrass",
+    "purpleyamube": "Ube (Purple Yam)",
+    "ricebrandarak": "Tahop (Rice Bran)",
+    "ricehulls": "Apa sa Humay",
+    "saluyotjutemallowleaves": "Dahon sa Saluyot (Jute Mallow)",
+    "sambongleaves": "Dahon sa Sambong",
+    "sealettuce": "Sea Lettuce",
+    "sorghumgrain": "Binhi sa Sorghum",
+    "soybeanmeal": "Soybean Meal",
+    "sweetpotatoleavescamotetops": "Kamote Tops (Sweet Potato Leaves)",
+    "tarogabicorms": "Gabi (Taro)"
+  }
+}

@@ -1,0 +1,180 @@
+
+{
+  "header": {
+    "title": {
+      "part1": "Farm Feed & Care",
+      "part2": "AI"
+    },
+    "subtitle": "Intelligent feeding solutions for your livestock.",
+    "languageSelectorLabel": "Select Language"
+  },
+  "animalSelector": {
+    "title": "Select Animal",
+    "animalTypeLabel": "Animal Type",
+    "subspeciesLabel": "Sub-species / Stage"
+  },
+  "parameters": {
+    "title": "Parameters",
+    "numberOfAnimals": "Number of Animals",
+    "recommendedFeed": "Recommended Feed (g/day)",
+    "dailyTotal": "Daily Total (kg/day)",
+    "feedingMode": "Feeding Mode",
+    "directFeeding": "Direct Feeding",
+    "fermentation": "Fermentation",
+    "fermentationNote": "Fermentation can increase nutrient absorption. Please consult a guide for proper procedures."
+  },
+  "commercialFeed": {
+    "title": "Commercial Feed & Cost Savings",
+    "feedType": "Feed Type",
+    "pricePerKg": "Price per kg (PHP)",
+    "calculatedAmount": "Calculated Amount (kg/day)",
+    "totalPotentialCost": "Total Potential Cost",
+    "potentialCostNote": "(Commercial feed only)",
+    "currentTotalCost": "Current Total Cost",
+    "currentCostNote": "(Commercial + Natural)",
+    "dailySavings": "Daily Savings",
+    "savingsNote": "(Money you save)"
+  },
+  "mixWeights": {
+    "title": "Natural Ingredient Mix",
+    "subtitle": "Use the dropdown to add ingredients you have on hand, then use the AI to create a balanced mix.",
+    "resetButton": "Reset Mix",
+    "optimizeButton": "Optimize with Natural Feeds",
+    "optimizingButton": "Optimizing...",
+    "addIngredientLabel": "Add Available Ingredient",
+    "selectPlaceholder": "-- Select an ingredient --",
+    "addButton": "Add",
+    "error": {
+      "prefix": "Optimization failed.",
+      "suffix": "Please try again or adjust your inputs."
+    },
+    "table": {
+      "ingredient": "Ingredient",
+      "weightSlider": "Weight (slider)",
+      "weightKg": "Weight (kg)",
+      "pricePerKg": "Price/kg (PHP)",
+      "locked": "Locked",
+      "naturalMixCost": "Natural Mix Cost",
+      "commercialCost": "Commercial Cost",
+      "totalMixCost": "Total Mix Cost",
+      "totalMixWeight": "Total Mix Weight"
+    },
+    "noIngredients": {
+      "line1": "No natural ingredients added yet.",
+      "line2": "Select ingredients you have on hand from the dropdown above to begin."
+    }
+  },
+  "nutrientBlends": {
+    "title": "Blend Nutrients",
+    "table": {
+      "nutrient": "Nutrient",
+      "per100g": "per 100 g",
+      "per1kg": "per 1 kg",
+      "perAnimal": "per bird/day",
+      "totalDay": "total/day"
+    }
+  },
+  "targetsComparison": {
+    "title": "Targets & Comparison (per animal/day)",
+    "table": {
+      "nutrient": "Nutrient",
+      "actual": "Actual",
+      "goalRange": "Goal Range",
+      "unit": "Unit",
+      "status": "Status"
+    }
+  },
+  "additionalInfo": {
+    "title": "Additional Information",
+    "tabs": {
+      "vaccination": "Vaccination Schedule",
+      "therapies": "Alternative Therapies"
+    },
+    "loading": "Loading AI recommendations...",
+    "error": {
+      "prefix": "Failed to load content for"
+    },
+    "notes": "Notes",
+    "disclaimer": "Disclaimer",
+    "therapies": {
+      "benefit": "Benefit",
+      "administration": "Administration"
+    },
+    "noData": "No data available."
+  },
+  "status": {
+    "low": "Low",
+    "met": "Met",
+    "high": "High",
+    "n/a": "N/A"
+  },
+  "animals": {
+    "chicken": "Chicken",
+    "pig": "Pig",
+    "quail": "Quail",
+    "rabbit": "Rabbit",
+    "goat": "Goat",
+    "cow": "Cow",
+    "waterbuffalo": "Water Buffalo",
+    "goose": "Goose",
+    "duck": "Duck",
+    "turkey": "Turkey",
+    "tilapia": "Tilapia"
+  },
+  "subspecies": {
+    "broiler": "Broiler",
+    "layer": "Layer",
+    "native": "Native",
+    "grower": "Grower",
+    "finisher": "Finisher",
+    "sow": "Sow",
+    "starter": "Starter",
+    "fryer": "Fryer",
+    "breeder": "Breeder",
+    "meattype": "Meat Type",
+    "dairytype": "Dairy Type",
+    "beefcattle": "Beef Cattle",
+    "dairycow": "Dairy Cow",
+    "carabao": "Carabao",
+    "all": "All",
+    "meat": "Meat",
+    "fingerling": "Fingerling",
+    "grow-out": "Grow-out"
+  },
+  "ingredients": {
+    "alugbatimalabarspinach": "Alugbati (Malabar Spinach)",
+    "azolla": "Azolla",
+    "banabaleaves": "Banaba Leaves",
+    "bananastems&leaves": "Banana Stems & Leaves",
+    "brokenrice": "Broken Rice",
+    "cassavafreshroot": "Cassava (Fresh Root)",
+    "centrosema": "Centrosema",
+    "coprameal": "Copra Meal",
+    "cornyellow": "Corn (Yellow)",
+    "duckweed": "Duckweed",
+    "fruitspapayabanana": "Fruits (Papaya/Banana)",
+    "greenbananasaba": "Green Banana (Saba)",
+    "guineagrass": "Guinea Grass",
+    "indigofera": "Indigofera",
+    "ipil-ipilleaves": "Ipil-ipil Leaves",
+    "kakawate/madredecacao": "Kakawate / Madre de Cacao",
+    "kangkongwaterspinach": "Kangkong (Water Spinach)",
+    "lagundileaves": "Lagundi Leaves",
+    "lemongrasstanglad": "Lemongrass (Tanglad)",
+    "madredeagua": "Madre de Agua",
+    "malunggaymoringaleaves": "Malunggay (Moringa) Leaves",
+    "napiergrass": "Napier Grass",
+    "oreganoleaves": "Oregano Leaves",
+    "paragrass": "Paragrass",
+    "purpleyamube": "Purple Yam (Ube)",
+    "ricebrandarak": "Rice Bran (Darak)",
+    "ricehulls": "Rice Hulls",
+    "saluyotjutemallowleaves": "Saluyot (Jute Mallow) Leaves",
+    "sambongleaves": "Sambong Leaves",
+    "sealettuce": "Sea Lettuce",
+    "sorghumgrain": "Sorghum Grain",
+    "soybeanmeal": "Soybean Meal",
+    "sweetpotatoleavescamotetops": "Sweet Potato Leaves (Camote Tops)",
+    "tarogabicorms": "Taro (Gabi) Corms"
+  }
+}
