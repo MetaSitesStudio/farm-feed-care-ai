@@ -63,6 +63,8 @@ export interface IndustrialFeed {
 
 export interface IndustrialFeedWithWeight extends IndustrialFeed {
   weight: number; // in kg
+  originalWeight?: number; // Original total feed weight
+  ratio?: number; // Percentage of total feed that is commercial (0.0 to 1.0)
 }
 
 // For structured vaccination schedule response

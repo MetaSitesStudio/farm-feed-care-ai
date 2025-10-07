@@ -33,7 +33,10 @@
     "currentTotalCost": "Current Total Cost",
     "currentCostNote": "(Commercial + Natural)",
     "dailySavings": "Daily Savings",
-    "savingsNote": "(Money you save)"
+    "savingsNote": "(Money you save)",
+    "optimized": "Smart Feed Optimization",
+    "reducedFromTo": "Reduced from {{original}}kg to {{optimized}}kg ({{percentage}}% of total) + fillers added",
+    "ofTotal": "of total"
   },
   "mixWeights": {
     "title": "Natural Ingredient Mix",
@@ -191,5 +194,38 @@
     "kitchenscrapsvegetable": "Kitchen Scraps (Vegetable)",
     "molasses": "Molasses",
     "pineapplewaste": "Pineapple Waste"
+  },
+  "gauge": {
+    "nutritionLevel": "Nutrition Level",
+    "optimize": "Optimize",
+    "optimal": "Optimal",
+    "low": "Low",
+    "high": "High"
+  },
+  "suggestions": {
+    "addProtein": "Add protein-rich feeds (legumes, fish meal)",
+    "addEnergy": "Add energy sources (grains, molasses)",
+    "addCalcium": "Add calcium sources (limestone, shells)",
+    "addPhosphorus": "Add phosphorus sources (bone meal)",
+    "reduce": "Reduce {{nutrient}} content or dilute mix"
+  },
+  "nutrientStatus": {
+    "title": "Nutrition Status",
+    "allTargetsMet": "All targets met ✓",
+    "deficiencies": "nutrients below target",
+    "belowTarget": "insufficient",
+    "excesses": "nutrients excessive",
+    "suggestedSupplements": "View Supplements",
+    "more": "more"
+  },
+  "supplements": {
+    "title": "Mineral & Supplement Suggestions",
+    "allGood": "Nutritional Targets Met!",
+    "allGoodDesc": "Your current feed mix meets all nutritional requirements.",
+    "recommendations": "Recommended Supplements",
+    "targets": "Targets",
+    "dosage": "Dosage",
+    "seeMore": "See More",
+    "more": "more supplements"
   }
 }

@@ -191,5 +191,44 @@
     "kitchenscrapsvegetable": "Salin sa Utanon sa Kusina",
     "molasses": "Molasses",
     "pineapplewaste": "Basura sa Pinya"
+  },
+  "gauge": {
+    "title": "Nutrition Radar",
+    "perfect": "Perpektong Balance",
+    "deficient": "Kinahanglan og Dugang",
+    "excessive": "Sobra Kaayo",
+    "mixed": "Adunay Problema",
+    "analyzing": "Gi-analyze...",
+    "autoFix": "Auto Ayos",
+    "smartSuggestions": "Mga Tip",
+    "low": "Mubo",
+    "high": "Taas",
+    "more": "dugang pa",
+    "less": "gamay ra"
+  },
+  "suggestions": {
+    "addProtein": "Duganga og protein (beans, fish meal)",
+    "addEnergy": "Duganga og energy (bugas, molasses)",
+    "addCalcium": "Duganga og calcium (limestone, shells)",
+    "addPhosphorus": "Duganga og phosphorus (bone meal)",
+    "reduce": "Kuhaon ang {{nutrient}} o hatag-hatag ang mix"
+  },
+  "nutrientStatus": {
+    "title": "Kahimtang sa Nutrisyon",
+    "allTargetsMet": "Tanan nga target naabot na ✓",
+    "deficiencies": "kulang sa nutrisyon",
+    "excesses": "sobra sa nutrisyon",
+    "suggestedSupplements": "Tan-awa ang Supplements",
+    "more": "dugang pa"
+  },
+  "supplements": {
+    "title": "Mga Sugyot sa Mineral ug Supplement",
+    "allGood": "Naabot ang Nutritional Targets!",
+    "allGoodDesc": "Ang inyong karon nga feed mix nakatugon sa tanan nga nutritional requirements.",
+    "recommendations": "Mga Girekomendar nga Supplement",
+    "targets": "Mga Target",
+    "dosage": "Dosis",
+    "seeMore": "Tan-awa pa",
+    "more": "pa nga supplements"
   }
 }

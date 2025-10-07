@@ -4,6 +4,7 @@ import type { FeedIngredient, IndustrialFeedWithWeight, Nutrient, NutritionalTar
 import { getFeedSuggestion } from '../services/geminiService';
 import { IngredientSlider } from './IngredientSlider';
 import { MultiSelectDropdown } from './MultiSelectDropdown';
+import NutrientGauge from './NutrientGauge';
 import { PHILIPPINE_FEEDS } from '../constants';
 import { useTranslation } from '../hooks/useTranslation';
 
@@ -23,6 +24,9 @@ interface MixWeightsProps {
   addIngredient: (name: string) => void;
   removeIngredient: (index: number) => void;
   feedingMode: 'Direct' | 'Fermentation';
+  nutrients: Nutrient[];
+  targets: Nutrient[];
+  feedPerAnimal: number;
 }
 
 export const MixWeights: React.FC<MixWeightsProps> = ({
@@ -41,6 +45,9 @@ export const MixWeights: React.FC<MixWeightsProps> = ({
   addIngredient,
   removeIngredient,
   feedingMode,
+  nutrients,
+  targets,
+  feedPerAnimal,
 }) => {
     const { t } = useTranslation();
     const [isLoading, setIsLoading] = useState(false);
@@ -164,6 +171,15 @@ export const MixWeights: React.FC<MixWeightsProps> = ({
                     <p>{error}</p>
                 </div>
             )}
+
+            {/* Real-time Nutrient Gauge */}
+            <NutrientGauge
+                nutrients={nutrients}
+                targets={targets}
+                totalFeedWeight={totalFeed}
+                feedPerAnimal={feedPerAnimal}
+                onAutoAdjust={() => handleSuggestMix()}
+            />
 
             <div className="my-6">
                 <MultiSelectDropdown

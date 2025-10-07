@@ -16,7 +16,7 @@ const getApiKey = (): string => {
 
 const ai = new GoogleGenAI({ apiKey: getApiKey() });
 
-const model = 'gemini-2.5-flash';
+const model = 'gemini-2.5-flash'; // Back to working model
 
 /**
  * A robust parser to extract a JSON object from a string that might contain markdown or other text.
@@ -68,92 +68,27 @@ export const getFeedSuggestion = async (
       2.  **Pool of Usable Natural Ingredients:** None. Only use the locked ingredients and commercial feed.
     `;
 
-    // Fermentation considerations
-    const fermentationGuidance = feedingMode === 'Fermentation' ? `
-      
-      **IMPORTANT - FERMENTATION MODE:**
-      This feed mix will be FERMENTED before feeding. Consider these fermentation effects and optimize accordingly:
-      
-      **Fermentation Benefits:**
-      - Increases protein digestibility by 15-25% (reduce protein targets by 10-15%)
-      - Breaks down anti-nutritional factors in raw ingredients
-      - Increases B-vitamin content naturally
-      - Improves fiber digestibility by 10-15%
-      - Creates beneficial probiotics for gut health
-      - Reduces feed cost by making cheaper, fibrous ingredients more nutritious
-      
-      **Best Ingredients for Fermentation (prioritize these):**
-      - Rice Bran (Darak) - excellent for fermentation, high nutrients
-      - Broken Rice - provides carbohydrates for fermentation
-      - Banana Peels (Dried) - cheap, ferments well, good fiber
-      - Kitchen Scraps (Vegetable) - very cheap, ferments easily
-      - Molasses - provides sugar for fermentation process
-      - Sweet Potato Leaves (Camote Tops) - good protein, ferments well
-      - Cassava (Fresh Root) - starchy, feeds fermentation bacteria
-      - Pineapple Waste - natural enzymes help fermentation
-      
-      **Fermentation Strategy:**
-      - Use 10-20% more fibrous/cheaper ingredients than normal
-      - Reduce expensive commercial feed proportion
-      - Include molasses (2-5% of mix) to kick-start fermentation
-      - Target slightly lower protein levels since fermentation will increase bioavailability
-      ` : '';
+    // Fermentation considerations (simplified for speed)
+    const fermentationGuidance = feedingMode === 'Fermentation' ? 
+      '\n**FERMENTATION MODE:** Prioritize rice bran, molasses, and fibrous ingredients. Reduce protein targets by 10%.' : '';
 
-    const prompt = `
-      As an expert animal nutritionist in the Philippines, your task is to solve a feed formulation problem with a primary goal of minimizing cost for a farmer.
+    const prompt = `Create a ${totalFeed.toFixed(2)}kg feed mix for ${animal} (${subSpecies}).${fermentationGuidance}
 
-      **Goal:** Create the absolute cheapest feed mix for a ${animal} (${subSpecies}) that weighs exactly ${totalFeed.toFixed(2)} kg, while staying within healthy nutritional guidelines. Your primary objective is to minimize the total cost.${fermentationGuidance}
+Targets (per 100g): ${nutritionalTargetsString}
 
-      **Nutritional Guidelines (per 100g of the final mix):**
-      These are important targets, but some flexibility is allowed to achieve the lowest possible cost.
-      ${nutritionalTargetsString}
+Commercial feed: "${industrialFeed.name}" (${industrialFeed.pricePerKg}₱/kg) - ${JSON.stringify(industrialFeed.nutrients)}
+${availableIngredientsPrompt}
+Fixed: ${lockedIngredients}
 
-      **Available Components & Costs:**
-      1.  **Baseline Commercial Feed:** "${industrialFeed.name}" (Cost: ${industrialFeed.pricePerKg.toFixed(2)} PHP/kg, Nutrients per 100g: ${JSON.stringify(industrialFeed.nutrients)}).
-      ${availableIngredientsPrompt}
+Use 50-70% commercial feed + natural ingredients. Total must equal ${totalFeed.toFixed(2)}kg exactly. Meet nutrition targets ±5%.
 
-      **Fixed Constraints:**
-      - **Locked Ingredients:** You MUST use the exact weights and costs for these: ${lockedIngredients}.
-      - **Total Weight:** The final mix MUST weigh exactly ${totalFeed.toFixed(2)} kg.
-
-      **Optimization Objective:**
-      Your main goal is to **MINIMIZE THE TOTAL COST** of the final mix. The total cost is the sum of (weight * cost_per_kg) for every single ingredient used.
-      - Use the provided ingredient costs to make economic trade-offs.
-      - Maximize cheap, nutritionally adequate natural ingredients and minimize expensive commercial feed or pricey natural ingredients.
-      - Create a *reasonable and healthy* mix. Do not create a mix that is dangerously low on critical nutrients, especially protein.
-      - Strive to get as close as possible to the nutritional guidelines. A small deviation (e.g., 5-10%) from the targets is acceptable if it allows for significant cost savings.
-      - The final mix should be a practical recipe a farmer would actually use.
-
-      **Output Instructions:**
-      - Provide your response as a single, valid JSON object.
-      - The object must have one key: "ingredients".
-      - "ingredients" must be an array of objects.
-      - Each object must have "name" (string) and "weight" (number in kg).
-      - Your response must include all ingredients from the "Pool of Usable Natural Ingredients", any "Locked Ingredients", and the "Baseline Commercial Feed", with their calculated weights (which can be 0).
-      - Do not include any other text, explanation, or markdown.
-    `;
+JSON only: {"ingredients": [{"name": "...", "weight": 0.00}, ...]}`;
     
     const response = await ai.models.generateContent({
       model: model,
       contents: prompt,
       config: {
-        responseMimeType: "application/json",
-        responseSchema: {
-          type: Type.OBJECT,
-          properties: {
-            ingredients: {
-              type: Type.ARRAY,
-              items: {
-                type: Type.OBJECT,
-                properties: {
-                  name: { type: Type.STRING },
-                  weight: { type: Type.NUMBER }
-                },
-                required: ['name', 'weight']
-              }
-            }
-          }
-        }
+        responseMimeType: "application/json"
       }
     });
     
