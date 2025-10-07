@@ -1,9 +1,10 @@
 [build]
-  command = "npm run build"
+  command = "chmod +x build.sh && ./build.sh"  
   publish = "dist"
 
 [build.environment]
-  NODE_VERSION = "18"
+  NODE_VERSION = "18.19.0"
+  NPM_FLAGS = "--legacy-peer-deps"
 
 [[redirects]]
   from = "/*"
